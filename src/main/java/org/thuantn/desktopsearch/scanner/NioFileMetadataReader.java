@@ -20,14 +20,14 @@ public class NioFileMetadataReader implements FileMetadataReader {
                 path, BasicFileAttributes.class
         );
 
-        return FileMetaData.builder()
-                .size(attributes.size())
-                .fileName(path.getFileName().toString())
-                .createdAt(attributes.creationTime().toInstant())
-                .path(path)
-                .extension(extractExtension(path.getFileName().toString()))
-                .modifiedAt(attributes.lastModifiedTime().toInstant())
-                .build();
+        return new FileMetaData(
+            path,
+            path.getFileName().toString(),
+            extractExtension(path.getFileName().toString()),
+            attributes.size(),
+            attributes.creationTime().toInstant(),
+            attributes.lastModifiedTime().toInstant()
+        );
     }
 
     private String extractExtension(String fileName) {

@@ -19,7 +19,6 @@
         <logback.version>1.6.1</logback.version>
 
         <junit.version>6.1.2</junit.version>
-        <lombok.version>1.16.20</lombok.version>
         <!-- Maven Plugins -->
         <maven.surefire.version>3.5.4</maven.surefire.version>
     </properties>
@@ -81,14 +80,6 @@
             <artifactId>logback-classic</artifactId>
             <version>${logback.version}</version>
         </dependency>
-        <!-- Source: https://mvnrepository.com/artifact/org.projectlombok/lombok -->
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <version>${lombok.version}</version>
-            <scope>compile</scope>
-        </dependency>
-
         <!--
             JUnit
 
@@ -114,12 +105,6 @@
             </plugin>
 
             <!-- Source: https://mvnrepository.com/artifact/org.projectlombok/lombok-maven-plugin -->
-            <plugin>
-                <groupId>org.projectlombok</groupId>
-                <artifactId>lombok-maven-plugin</artifactId>
-                <version>1.16.20.0</version>
-            </plugin>
-
             <!--
                 Runs JUnit tests with:
                     mvn test

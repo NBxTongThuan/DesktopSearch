@@ -14,5 +14,8 @@ public class AppConstant {
 
     public static final String PATH_MUST_NOT_BE_NULL =  "path must not be null";
 
+    public static final String FILE_DATA_REQUIRE_NON_NULL = "fileMetaData must not be null";
+
+    public static final String REQUIRE_NON_NULL = "object require non null";
 
 }
