@@ -1,4 +1,4 @@
-package com.desktopsearch.scanner;
+package org.thuantn.desktopsearch;
 
 import org.apache.lucene.document.Document;
 import org.junit.jupiter.api.Test;

@@ -33,7 +33,7 @@ public class NioFileMetadataReader implements FileMetadataReader {
     private String extractExtension(String fileName) {
         int lastDot = fileName.lastIndexOf('.');
 
-        if (lastDot < 0 || lastDot == fileName.length() - 1) {
+        if (lastDot <= 0 || lastDot == fileName.length() - 1) {
             return "";
         }
 

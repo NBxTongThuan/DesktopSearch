@@ -1,4 +1,4 @@
-package com.desktopsearch.scanner;
+package org.thuantn.desktopsearch;
 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.io.TempDir;
