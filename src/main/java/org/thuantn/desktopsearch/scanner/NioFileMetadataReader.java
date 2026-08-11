@@ -12,7 +12,7 @@ import java.util.Objects;
 public class NioFileMetadataReader implements FileMetadataReader {
 
     @Override
-    public FileMetaData read(Path path) throws IOException {
+    public FileMetadata read(Path path) throws IOException {
 
         Objects.requireNonNull(path, AppConstant.PATH_MUST_NOT_BE_NULL);
 
@@ -20,7 +20,7 @@ public class NioFileMetadataReader implements FileMetadataReader {
                 path, BasicFileAttributes.class
         );
 
-        return new FileMetaData(
+        return new FileMetadata(
             path,
             path.getFileName().toString(),
             extractExtension(path.getFileName().toString()),

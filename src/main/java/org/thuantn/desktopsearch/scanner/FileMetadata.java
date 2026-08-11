@@ -3,7 +3,7 @@ package org.thuantn.desktopsearch.scanner;
 import java.nio.file.Path;
 import java.time.Instant;
 
-public record FileMetaData(
+public record FileMetadata(
 
 	Path path,
 	String fileName,

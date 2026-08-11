@@ -5,6 +5,6 @@ import java.nio.file.Path;
 
 public interface FileMetadataReader {
 
-    FileMetaData read(Path path) throws IOException;
+    FileMetadata read(Path path) throws IOException;
 
 }
