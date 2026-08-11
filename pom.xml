@@ -4,14 +4,118 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>org.example</groupId>
-    <artifactId>DesktopSearch</artifactId>
+    <groupId>org.thuantn</groupId>
+    <artifactId>desktop-search</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <properties>
-        <maven.compiler.source>21</maven.compiler.source>
-        <maven.compiler.target>21</maven.compiler.target>
+        <!-- Java -->
+        <maven.compiler.release>21</maven.compiler.release>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+        <!-- Dependencies -->
+        <lucene.version>10.5.0</lucene.version>
+        <slf4j.version>2.0.18</slf4j.version>
+        <logback.version>1.6.1</logback.version>
+
+        <junit.version>6.1.2</junit.version>
+        <!-- Maven Plugins -->
+        <maven.surefire.version>3.5.4</maven.surefire.version>
     </properties>
 
+    <dependencies>
+
+        <!--
+            Apache Lucene Core
+
+            Core indexing/search APIs:
+            - IndexWriter
+            - IndexSearcher
+            - Document
+            - Query
+            - Directory
+            - FSDirectory
+        -->
+        <dependency>
+            <groupId>org.apache.lucene</groupId>
+            <artifactId>lucene-core</artifactId>
+            <version>${lucene.version}</version>
+        </dependency>
+
+        <!--
+            Lucene Analyzers
+
+            Provides analyzers such as:
+            - StandardAnalyzer
+            - token filters
+            - language/text analysis utilities
+
+            Later we will also use this when building
+            FilenameAnalyzer.
+        -->
+        <dependency>
+            <groupId>org.apache.lucene</groupId>
+            <artifactId>lucene-analysis-common</artifactId>
+            <version>${lucene.version}</version>
+        </dependency>
+
+        <!--
+            SLF4J
+
+            Logging API used by application code.
+        -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>${slf4j.version}</version>
+        </dependency>
+
+        <!--
+            Logback
+
+            Runtime implementation of SLF4J.
+        -->
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+            <version>${logback.version}</version>
+        </dependency>
+        <!--
+            JUnit
+
+            Unit + integration testing.
+        -->
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter</artifactId>
+            <version>${junit.version}</version>
+            <scope>test</scope>
+        </dependency>
+
+    </dependencies>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.13.0</version>
+                <configuration>
+                    <release>21</release>
+                </configuration>
+            </plugin>
+
+            <!-- Source: https://mvnrepository.com/artifact/org.projectlombok/lombok-maven-plugin -->
+            <!--
+                Runs JUnit tests with:
+                    mvn test
+            -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>${maven.surefire.version}</version>
+            </plugin>
+
+        </plugins>
+
+    </build>
 </project>
